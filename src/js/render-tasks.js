@@ -5,10 +5,10 @@ export function renderTask(task) {
   const li = document.createElement('li');
   li.className = 'task-list-item';
   li.dataset.id = task.id;
-  li.innerHTML = `
+    li.innerHTML = `
+    <button class="task-list-item-btn">Delete</button>
     <h3>${task.title}</h3>
     <p>${task.description}</p>
-    <button class="task-list-item-btn">Delete</button>
   `;
 
   refs.taskList.appendChild(li);

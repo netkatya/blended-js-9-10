@@ -18,6 +18,9 @@
 import { refs } from './js/refs.js';
 import { getTasks, addTask } from './js/tasks.js';
 import { renderAllTasks, renderTask, handleTaskDelete } from './js/render-tasks.js';
+import { themeToggler } from './js/theme-switcher.js';
+
+themeToggler();
 
 refs.form.addEventListener('submit', onFormSubmit);
 refs.taskList.addEventListener('click', handleTaskDelete);
