@@ -15,5 +15,30 @@
   </li>
 */
 
-import { themeToggler } from "./js/theme-switcher";
-themeToggler();
+import { refs } from './js/refs.js';
+import { getTasks, addTask } from './js/tasks.js';
+import { renderAllTasks, renderTask, handleTaskDelete } from './js/render-tasks.js';
+
+refs.form.addEventListener('submit', onFormSubmit);
+refs.taskList.addEventListener('click', handleTaskDelete);
+
+
+renderAllTasks(getTasks());
+
+function onFormSubmit(e) {
+  e.preventDefault();
+
+  const title = e.target.elements.taskName.value.trim();
+  const description = e.target.elements.taskDescription.value.trim();
+  if (!title) return;
+
+  const task = {
+    id: Date.now().toString(),
+    title,
+    description,
+  };
+
+  addTask(task);
+  renderTask(task);
+  refs.form.reset();
+}
