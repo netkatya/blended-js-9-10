@@ -14,3 +14,6 @@
       <p>Текст</p>
   </li>
 */
+
+import { themeToggler } from "./js/theme-switcher";
+themeToggler();
