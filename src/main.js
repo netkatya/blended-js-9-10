@@ -33,8 +33,11 @@ function onFormSubmit(e) {
 
   const title = e.target.elements.taskName.value.trim();
   const description = e.target.elements.taskDescription.value.trim();
-  if (!title) return;
-
+  if (!title || !description) {
+    alert("Please fill both fields of the form");
+    return;
+  }
+    
   const task = {
     id: Date.now().toString(),
     title,

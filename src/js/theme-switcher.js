@@ -4,9 +4,9 @@ export function themeToggler() {
     const savedTheme = localStorage.getItem("Theme");
 
         if (savedTheme === "dark") {
-        document.body.classList.replace("theme-dark", "theme-light");
+        document.body.classList.replace("theme-light", "theme-dark");
         } else if (savedTheme === "light") {
-        document.body.classList.add("theme-light", "theme-dark");
+        document.body.classList.replace("theme-dark", "theme-light");
     }
 
     themeButton.addEventListener("click", event => {
